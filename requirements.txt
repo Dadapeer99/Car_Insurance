@@ -2,4 +2,4 @@ Flask
 gunicorn
 numpy
 joblib
-pickle
+python
