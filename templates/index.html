@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='policy.css') }}">
+    </head>
+    <body>
+        <div class="a">
+        <h1>Car Policy Claim</h1>
+        <div class="container">
+            <form action="/predict" method="POST">
+                <table>
+                    <tr>
+                        <td>
+                            <label class="l">Policy tenure</label>
+                        </td>
+                        <td>
+                            <input type="number" class="t" step="0.0001" name="policy_tenure" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="l">Age of Car</label>
+                        </td>
+                        <td>
+                            <input type="number" class="t" step="0.0001" name="age_of_car" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="l">Age of policy holder</label> 
+                        </td>
+                        <td>
+                            <input type="number" class="t" step="0.001" name="age_of_policyholder" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="l" >Population density</label>
+                        </td>
+                        <td>
+                            <input type="text" class="t" name="population_density" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="l" >Model</label>
+                        </td>
+                        <td>
+                        <select class="t" name="model" id="model">
+                            <option value=0>M1</option>
+                            <option value=1>M2</option>
+                            <option value=2>M3</option>
+                            <option value=3>M4</option>
+                            <option value=4>M5</option>
+                            <option value=5>M6</option>
+                            <option value=6>M7</option>
+                            <option value=7>M8</option>
+                            <option value=8>M9</option>
+                            <option value=9>M10</option>
+                            <option value=10>M11</option>
+                        </select>
+                        </td>
+                    </tr>
+                </table>
+                <button type="submit" class="btn" >Policy</button>
+                <br>
+                <br>
+                <div class="final">
+                    <label class="final1">{{ res}}</label>
+                </div>
+            </form>
+        </div>
+        </div>
+    </body>
+</html>

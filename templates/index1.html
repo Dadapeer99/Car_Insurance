@@ -1,0 +1,207 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='policy.css') }}">
+    
+        <script>
+            function check() {
+              var s1 = document.car.adjust;
+              var s2 = document.car.steer;
+              var s3 = document.car.front;
+              if(s1.value.length<=0 || s2.value.length<=0 || s3.value.length<=0){
+                alert(" Some radio butoons are not marked");
+                return false;
+              }
+              return true;
+            }
+          </script>
+    
+    </head>
+    <body>
+        <div class="a">
+        <h1>Car Policy Claim</h1>
+        <div class="container">
+            <form action="/predict" method="POST" name="car" onsubmit="return check();">
+                <table>
+                    <tr>
+                        <td>
+                            <label class="l">Policy tenure</label>
+                        </td>
+                        <td>
+                            <input type="number" class="t" step="0.0001" name="policy_tenure" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="l">Age of Car</label>
+                        </td>
+                        <td>
+                            <input type="number" class="t" step="0.0001" name="age_of_car" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="l">Area_cluster</label>
+                        </td>
+                        <td>
+                            <select class="t" name="area_cluster" id="area_cluster">
+                                <option value=0>C1</option>
+                                <option value=1>C2</option>
+                                <option value=2>C3</option>
+                                <option value=3>C4</option>
+                                <option value=4>c5</option>
+                                <option value=5>C6</option>
+                                <option value=6>C7</option>
+                                <option value=7>C8</option>
+                                <option value=8>C9</option>
+                                <option value=9>C10</option>
+                                <option value=11>C11</option>
+                                <option value=12>C12</option>
+                                <option value=13>C13</option>
+                                <option value=14>C14</option>
+                                <option value=15>C15</option>
+                                <option value=16>C16</option>
+                                <option value=17>C17</option>
+                                <option value=18>C18</option>
+                                <option value=19>C19</option>
+                                <option value=20>C20</option>
+                                <option value=21>C21</option>
+                            </select>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="l" >Population density</label>
+                            </td>
+                            <td>
+                                <input type="text" class="t" name="population_density" required>
+                            </td>
+                        </tr>
+                        <tr>
+                        <td>
+                            <label class="l" >Model</label>
+                        </td>
+                        <td>
+                        <select class="t" name="model" id="model">
+                            <option value=0>M1</option>
+                            <option value=1>M2</option>
+                            <option value=2>M3</option>
+                            <option value=3>M4</option>
+                            <option value=4>M5</option>
+                            <option value=5>M6</option>
+                            <option value=6>M7</option>
+                            <option value=7>M8</option>
+                            <option value=8>M9</option>
+                            <option value=9>M10</option>
+                            <option value=10>M11</option>
+                        </select>
+                        </td>
+                        </tr>
+                    <tr>
+                        <td>
+                            <label class="l" >Max Torque</label>
+                        </td>
+                        <td>
+                            <select class="t" name="max_torque" id="max_torque">
+                            <option value=0>113Nm@4400rpm</option>
+                            <option value=1>60Nm@3500rpm</option>
+                            <option value=2>250Nm@2750rpm</option> 
+                            <option value=3>82.1Nm@3400rpm</option> 
+                            <option value=4>91Nm@4250rpm</option> 
+                            <option value=5>200Nm@1750rpm</option> 
+                            <option value=6>200Nm@3000rpm</option>
+                            <option value=7>85Nm@3000rpm</option>
+                            <option value=8>170Nm@4000rpm</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="l" >Max Power</label>
+                        </td>
+                        <td>
+                            <select class="t" name="max_power" id="max_power`">
+                            <option value=0>88.50bhp@6000rpm</option>
+                            <option value=1>40.36bhp@6000rpm</option>
+                            <option value=2>113.45bhp@4000rpm</option> 
+                            <option value=3>55.92bhp@5300rpm</option> 
+                            <option value=4>67.06bhp@5500rpm</option> 
+                            <option value=5>97.89bhp@3600rpm</option> 
+                            <option value=6>88.77bhp@4000rpm </option>
+                            <option value=7>61.68bhp@6000rpm </option>
+                            <option value=8>61.68bhp@6000rpm </option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="l" >Adjustable Steering</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="adjust" id="adjust" value=0>No
+                            <input type="radio" name="adjust" id="adjust" value=1>Yes
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="l" >Displacement</label>
+                        </td>
+                        <td>
+                            <input type="text" class="t" name="displacement" required>
+                        </td>
+                    </tr>
+                    <tr>
+                    <tr>
+                        <td>
+                            <label class="l" >Steering type</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="steer" id="steer" value=0>Power
+                            <input type="radio" name="steer" id="steer" value=1>Electric
+                            <input type="radio" name="steer" id="steer" value=2>Manual
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="l" >Length</label>
+                        </td>
+                        <td>
+                            <input type="text" class="t" name="length" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="l" >Width</label>
+                        </td>
+                        <td>
+                            <input type="text" class="t" name="width" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="l" >Gross Weight</label>
+                        </td>
+                        <td>
+                            <input type="text" class="t" name="gross weight" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="l" >Front fog lights</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="front" id="front" value=0>No
+                            <input type="radio" name="front" id="front" value=1>Yes
+                        </td>
+                    </tr>
+                </table>
+                <button class="btn"> Policy </button>
+                <br>
+                <br>
+                <div class="final">
+                    <label class="final1">{{ res}}</label>
+                </div>
+            </form>
+        </div>
+        </div>
+    </body>
+</html>

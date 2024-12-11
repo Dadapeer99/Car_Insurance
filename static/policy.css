@@ -1,0 +1,30 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align:left;
+    background: linear-gradient(pink,grey,orange)
+}
+form .t{
+    align-items: first baseline;
+    background: skyblue; 
+    /* padding: 2% 40%; */
+    width:100%;
+}
+form .btn{
+    align-items: center;
+    height: 5%;
+    width:100%
+}
+form .final{
+    background: brown;
+    padding: 2% 2%;
+    width: 95%;
+    height: 4%;
+
+}
+form .final1{
+text-align:start;
+justify-content:baseline;
+align-items:start;
+}
